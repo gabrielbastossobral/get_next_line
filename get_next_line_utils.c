@@ -6,17 +6,19 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:28:12 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/30 13:24:30 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/30 16:50:15 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t	count;
 
 	count = 0;
+	if (!s)
+		return (0);
 	while (s[count])
 	{
 		count++;
@@ -57,13 +59,16 @@ char	*ft_strjoin(char *text, char *buff)
 	}
 	if (!text || !buff)
 		return (NULL);
-	str = (char *)malloc(ft_strlen(text) + ft_strlen(buff) + 1);
-	if (!str)
+	str = malloc(sizeof(char) * (ft_strlen(text) + ft_strlen(buff) + 1));
+	if (str == NULL)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (text[i++])
+	while (text[i])
+	{
 		str[i] = text[i];
+		i++;
+	}
 	while (buff[j])
 		str[i++] = buff[j++];
 	str[ft_strlen(text) + ft_strlen(buff)] = '\0';
@@ -81,7 +86,7 @@ char	*ft_get_line(char	*text)
 		return (NULL);
 	while (text[i] && text[i] != '\n')
 		i++;
-	line = (char *)malloc(sizeof(char) + i + 2);
+	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -92,7 +97,7 @@ char	*ft_get_line(char	*text)
 	}
 	if (text[i] == '\n')
 	{
-		line[i] = '\n';
+		line[i] = text[i];
 		i++;
 	}
 	line[i] = '\0';
@@ -106,14 +111,14 @@ char	*ft_new_text_position(char	*text)
 	char	*new_text;
 
 	i = 0;
-	while (text[i] && text[i] == '\n')
+	while (text[i] && text[i] != '\n')
 		i++;
 	if (!text[i])
 	{
 		free(text);
 		return (NULL);
 	}
-	new_text = (char *)malloc((ft_strlen(text) - i) + 1);
+	new_text = (char *)malloc(sizeof(char) * (ft_strlen(text) - i + 1));
 	if (!new_text)
 		return (NULL);
 	i++;
