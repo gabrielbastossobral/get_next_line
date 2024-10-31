@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:28:12 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/30 16:50:15 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/10/31 08:44:44 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,10 @@ char	*ft_strjoin(char *text, char *buff)
 	str = malloc(sizeof(char) * (ft_strlen(text) + ft_strlen(buff) + 1));
 	if (str == NULL)
 		return (NULL);
-	i = 0;
+	i = -1;
 	j = 0;
-	while (text[i])
-	{
+	while (text[++i])
 		str[i] = text[i];
-		i++;
-	}
 	while (buff[j])
 		str[i++] = buff[j++];
 	str[ft_strlen(text) + ft_strlen(buff)] = '\0';
