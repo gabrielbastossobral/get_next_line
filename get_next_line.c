@@ -6,11 +6,12 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:29:48 by gabastos          #+#    #+#             */
-/*   Updated: 2024/11/05 11:20:34 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:40:38 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <unistd.h>
 
 static char	*get_line_fd(int fd, char *line)
 {
