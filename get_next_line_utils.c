@@ -6,7 +6,7 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:28:12 by gabastos          #+#    #+#             */
-/*   Updated: 2024/11/05 10:36:39 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:18:39 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ char	*ft_strjoin(char *text, char *buff)
 {
 	size_t	i;
 	size_t	j;
+	size_t	size_str;
 	char	*str;
 
 	if (!text)
@@ -57,9 +58,10 @@ char	*ft_strjoin(char *text, char *buff)
 		text = (char *)malloc(sizeof(char) * 1);
 		text[0] = '\0';
 	}
+	size_str = ft_strlen(text) + ft_strlen(buff);
 	if (!text || !buff)
 		return (NULL);
-	str = malloc(sizeof(char) * (ft_strlen(text) + ft_strlen(buff) + 1));
+	str = malloc(sizeof(char) * (size_str + 1));
 	if (str == NULL)
 		return (NULL);
 	i = -1;
@@ -68,7 +70,7 @@ char	*ft_strjoin(char *text, char *buff)
 		str[i] = text[i];
 	while (buff[j])
 		str[i++] = buff[j++];
-	str[ft_strlen(text) + ft_strlen(buff)] = '\0';
+	str[size_str] = '\0';
 	free(text);
 	return (str);
 }
