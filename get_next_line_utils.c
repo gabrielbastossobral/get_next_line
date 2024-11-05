@@ -6,11 +6,11 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:28:12 by gabastos          #+#    #+#             */
-/*   Updated: 2024/10/31 08:44:44 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/11/05 10:36:39 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include <stdlib.h>
 
 size_t	ft_strlen(char *s)
 {
@@ -105,8 +105,10 @@ char	*ft_new_text_position(char	*text)
 {
 	size_t	i;
 	size_t	j;
+	size_t	size_text;
 	char	*new_text;
 
+	size_text = ft_strlen(text);
 	i = 0;
 	while (text[i] && text[i] != '\n')
 		i++;
@@ -115,7 +117,7 @@ char	*ft_new_text_position(char	*text)
 		free(text);
 		return (NULL);
 	}
-	new_text = (char *)malloc(sizeof(char) * (ft_strlen(text) - i + 1));
+	new_text = (char *)malloc(sizeof(char) * (size_text - i + 1));
 	if (!new_text)
 		return (NULL);
 	i++;
