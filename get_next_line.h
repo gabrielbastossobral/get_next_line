@@ -6,14 +6,13 @@
 /*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:30:16 by gabastos          #+#    #+#             */
-/*   Updated: 2024/11/05 11:07:35 by gabastos         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:23:58 by gabastos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
 
