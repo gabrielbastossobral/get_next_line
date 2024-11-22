@@ -1,7 +1,7 @@
 
 # 👤INFO ABOUT GET NEXT LINE
 
-This project is about a function that can read a line from a file and show the line in the standart output, then always that you call de function, it will return a line from de text in the file.
+This project is about a function that can read a line from a file and show the line in the standart output, then always that you call de function, it will return a line from de text in the file, one at a time.
 
 ## Bonus Part
 
