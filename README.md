@@ -7,7 +7,7 @@ This project is about a function that can read a line from a file and show the l
 
 The bonus part is just to read a line by differents files. For example, you read the first line by file 1, when you call the function again but to file 2, it will return the first line of file 2. So, the function will know wich line must read with a variadic files.
 
-
+![Logo](https://github.com/mcombeau/mcombeau/blob/main/42_badges/get_next_linem.png?raw=true)
 ## How to use
 
 To use the project you can git clone the repository
@@ -41,5 +41,3 @@ GitHub about francinette:
 ## Author
 
 - [@gabrielbastossobral](https://www.github.com/gabrielbastossobral)
-
-![Logo](https://github.com/mcombeau/mcombeau/blob/main/42_badges/get_next_linem.png?raw=true)
