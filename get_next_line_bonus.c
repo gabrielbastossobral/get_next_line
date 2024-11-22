@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gabastos <gabastos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gabrielsobral <gabrielsobral@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 13:29:48 by gabastos          #+#    #+#             */
-/*   Updated: 2024/11/05 14:09:15 by gabastos         ###   ########.fr       */
+/*   Created: 2024/11/22 16:00:29 by gabrielsobr       #+#    #+#             */
+/*   Updated: 2024/11/22 16:05:44 by gabrielsobr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <unistd.h>
 
 static char	*ft_free(char *str1, char *str2)
@@ -78,23 +78,23 @@ static char	*get_line_fd(int fd, char *line)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*text;
+	static char	*text[1024];
 
 	line = NULL;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
-		ft_free(line, text);
+		ft_free(line, NULL);
 		return (NULL);
 	}
-	text = get_line_fd(fd, text);
-	if (!text)
+	text[fd] = get_line_fd(fd, &text[fd][0]);
+	if (!text[fd])
 		return (NULL);
-	line = ft_get_line(text);
+	line = ft_get_line(&text[fd][0]);
 	if (!line)
 	{
-		ft_free(line, text);
+		ft_free(line, NULL);
 		return (NULL);
 	}
-	text = ft_new_text_position(text);
+	text[fd] = ft_new_text_position(&text[fd][0]);
 	return (line);
 }
