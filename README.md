@@ -36,10 +36,10 @@ GitHub about francinette:
 
 
 - [@francinette](https://github.com/xicodomingues/francinette)
-![Logo](https://github.com/mcombeau/mcombeau/blob/main/42_badges/get_next_linem.png?raw=true)
 
 
 ## Author
 
 - [@gabrielbastossobral](https://www.github.com/gabrielbastossobral)
 
+![Logo](https://github.com/mcombeau/mcombeau/blob/main/42_badges/get_next_linem.png?raw=true)
